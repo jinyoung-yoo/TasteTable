@@ -8,13 +8,13 @@
             {{ cell.text }}
         </li>
         </ol>
-            <img :src="img.encodedImage">
-
+        img<br>
         <img v-bind:src="base64ImageData" />
     </div>
 </template>
 <script>
 import Web3 from 'web3'
+import '@noia-network/sdk/dist/vendors~main'
 import { NoiaClient, NoiaClientContainer } from '@noia-network/sdk'
 import { bytesToBase64 } from '../utils/base64'
 
@@ -91,13 +91,10 @@ export default {
       ]
     }
   },
-  composed: {
+  computed: {
     base64ImageData: function () {
       return 'data:image/jpeg;base64,' + this.imageBytes
-    }
-  },
-
-  computed: {
+    },
     // 계산된 getter
     reversedMessage: function () {
       // `this` 는 vm 인스턴스를 가리킵니다.
@@ -106,9 +103,16 @@ export default {
   },
   mounted () {
     this.getProvider()
-
-    const noiaClient = new NoiaClient(() => new Worker())
+    const noiaClient = new NoiaClient()
     NoiaClientContainer.initialize(noiaClient)
+    var self = this
+    noiaClient.download({
+      src: 'ipfs:QmNfSFD8Ri1mrV8uk58Jq8iTDhUaG4jkzQ4wdBJbkmxxoP'
+    }).then(self.imageBytes = console.log('ttt ' + self.imageBytes))
+
+    // console.info(`Image downloaded (${imageBytes.length} bytes)`)
+    console.info(bytesToBase64(this.imageBytes))
+    // const noiaClient = new NoiaClient(() => new Worker())
     // console.log(await asyncFun())
 
     // asyncFunc().then(v = console.log(v))
@@ -116,14 +120,6 @@ export default {
     //     this.imageBytes = await noiaClient.download({
     //       src: "ipfs:QmbjpRxxL8TRNayHWysWTFSVht1DZxezSNcK48TUp94UmA"
     //     });
-
-    var self = this
-    noiaClient.download({
-      src: 'ipfs:QmbjpRxxL8TRNayHWysWTFSVht1DZxezSNcK48TUp94UmA'
-    }).then(self.imageBytes)
-
-    // console.info(`Image downloaded (${imageBytes.length} bytes)`)
-    console.info(bytesToBase64(this.imageBytes))
   },
   methods: {
     getProvider () {

@@ -5,7 +5,61 @@
       <h1 class="text-center">Matching</h1>
       <hr/>
       <br/>
+        <ul>
+        <form>
+        <input type="radio" name="tastelist" value="date"checked>Date<br>
+        <input type="radio" name="tastelist" value="travel">Travel<br>
+        <input type="radio" name="tastelist" value="food">Food
+        </form>
+        </ul>
     </div>
+    <div>
+        <ol>
+        <li v-for='cell in tables' 
+        v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
+       >
+            {{ cell.text }}
+        </li>
+         
+        </ol>
+    </div>
+    <div id="tables">
+      <div id="mytable">
+      <ul>
+      <li id=1></li>
+      <li id=2></li>
+      <li id=3></li>
+      </ul>
+      <ul>
+      <li id=4></li>
+      <li id=5></li>
+      <li id=6></li>
+      </ul>
+      <ul>
+      <li id=7></li>
+      <li id=8></li>
+      <li id=9></li>
+      </ul>
+      </div>
+      <div id="targettable">
+      <ul>
+      <li id=1></li>
+      <li id=2></li>
+      <li id=3></li>
+      </ul>
+      <ul>
+      <li id=4></li>
+      <li id=5></li>
+      <li id=6></li>
+      </ul>
+      <ul>
+      <li id=7></li>
+      <li id=8></li>
+      <li id=9></li>
+      </ul>
+      </div>
+    </div>
+    
   </div>
 
   <div id="petsRow" class="row">
@@ -28,14 +82,54 @@
   </div>
 </div>
 </template>
+<style>
+body {
+  background: #20262E;
+  padding: 20px;
+  font-family: Helvetica;
+}
 
+li {
+ vertical-align: top;
+    margin: 8px 0;
+    display: inline-block;
+    width: 90px !important;
+    border: 1px solid;
+    margin: 3px;
+    text-align: center;
+    cursor: pointer;
+    height: 90px;
+}
+label{
+  cursor: pointer;
+}
+ol {
+    width: 350px;
+}
+#app {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+del {
+  color: rgba(0, 0, 0, 0.3);
+}
+</style>
 <script>
 import Web3 from 'web3'
 
 export default {
 
-  name: 'Wallet',
-  data () {
+  name: 'datetable',
+  date () {
     return {
       toAddress: null,
       toAmount: 0,
@@ -43,7 +137,62 @@ export default {
       web3Provider: null,
       balance: 0,
       contracts: {},
-      account: null
+      account: null,
+      tables: [
+        { i: 1, text: '와인', taste: 0 },
+        { i: 2, text: '양주', taste: 0 },
+        { i: 3, text: '도심 산책', taste: 0 },
+        { i: 4, text: '야경', taste: 0 },
+        { i: 5, text: '해외 여행', taste: 0 },
+        { i: 6, text: '코엑스', taste: 0 },
+        { i: 7, text: '놀이 공원', taste: 0 },
+        { i: 8, text: '소주', taste: 0 },
+        { i: 9, text: '막걸리', taste: 0 }
+      ]
+    }
+  },
+  travel () {
+    return {
+      toAddress: null,
+      toAmount: 0,
+      web3: null,
+      web3Provider: null,
+      balance: 0,
+      contracts: {},
+      account: null,
+      tables: [
+        { i: 1, text: '와인', taste: 0 },
+        { i: 2, text: '양주', taste: 0 },
+        { i: 3, text: '도심 산책', taste: 0 },
+        { i: 4, text: '야경', taste: 0 },
+        { i: 5, text: '해외 여행', taste: 0 },
+        { i: 6, text: '코엑스', taste: 0 },
+        { i: 7, text: '놀이 공원', taste: 0 },
+        { i: 8, text: '소주', taste: 0 },
+        { i: 9, text: '막걸리', taste: 0 }
+      ]
+    }
+  },
+  food () {
+    return {
+      toAddress: null,
+      toAmount: 0,
+      web3: null,
+      web3Provider: null,
+      balance: 0,
+      contracts: {},
+      account: null,
+      tables: [
+        { i: 1, text: '와인', taste: 0 },
+        { i: 2, text: '양주', taste: 0 },
+        { i: 3, text: '도심 산책', taste: 0 },
+        { i: 4, text: '야경', taste: 0 },
+        { i: 5, text: '해외 여행', taste: 0 },
+        { i: 6, text: '코엑스', taste: 0 },
+        { i: 7, text: '놀이 공원', taste: 0 },
+        { i: 8, text: '소주', taste: 0 },
+        { i: 9, text: '막걸리', taste: 0 }
+      ]
     }
   },
   mounted () {
