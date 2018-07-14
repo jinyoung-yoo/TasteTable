@@ -25,38 +25,38 @@
     </div>
     <div id="tables">
       <div id="mytable">
-      <ul>
+      <ol>
       <li id=1></li>
       <li id=2></li>
       <li id=3></li>
-      </ul>
-      <ul>
+      </ol>
+      <ol>
       <li id=4></li>
       <li id=5></li>
       <li id=6></li>
-      </ul>
-      <ul>
+      </ol>
+      <ol>
       <li id=7></li>
       <li id=8></li>
       <li id=9></li>
-      </ul>
+      </ol>
       </div>
       <div id="targettable">
-      <ul>
+      <ol>
       <li id=1></li>
       <li id=2></li>
       <li id=3></li>
-      </ul>
-      <ul>
+      </ol>
+      <ol>
       <li id=4></li>
       <li id=5></li>
       <li id=6></li>
-      </ul>
-      <ul>
+      </ol>
+      <ol>
       <li id=7></li>
       <li id=8></li>
       <li id=9></li>
-      </ul>
+      </ol>
       </div>
     </div>
     
@@ -89,7 +89,7 @@ body {
   font-family: Helvetica;
 }
 
-li {
+ol li {
  vertical-align: top;
     margin: 8px 0;
     display: inline-block;

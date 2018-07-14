@@ -1,29 +1,31 @@
 <template>
     <div class='container'>
         <h2>취향 테이블 : 데이트</h2>
+        
         <ol>
         <li v-for='cell in tables' 
         v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
         v-on:click='cell.taste = (cell.taste + 1) % 4'>
             {{ cell.text }}
+            <img :src="myImage" class="small"/>
         </li>
         </ol>
-        img<br>
-        <img v-bind:src="base64ImageData" />
     </div>
 </template>
 <script>
+/* eslint-disable */
 import Web3 from 'web3'
+import Vue from 'vue'
+import { bytesToBase64 } from '../utils/base64'
 import '@noia-network/sdk/dist/vendors~main'
 import { NoiaClient, NoiaClientContainer } from '@noia-network/sdk'
-import { bytesToBase64 } from '../utils/base64'
-
+import * as Worker from 'worker-loader!@noia-network/sdk/worker'
 export default {
-
   name: 'Tables',
   data () {
     return {
-      imageBytes: '',
+      myimage: '',
+      imageBase64: '',
       toAddress: null,
       toAmount: 0,
       web3: null,
@@ -92,8 +94,10 @@ export default {
     }
   },
   computed: {
-    base64ImageData: function () {
-      return 'data:image/jpeg;base64,' + this.imageBytes
+    myImage () {
+      console.log('this.imageBase64')
+      console.log(this.imageBase64)
+    	return `data:image/png;base64, ${this.imageBase64}`
     },
     // 계산된 getter
     reversedMessage: function () {
@@ -103,15 +107,22 @@ export default {
   },
   mounted () {
     this.getProvider()
-    const noiaClient = new NoiaClient()
-    NoiaClientContainer.initialize(noiaClient)
+    console.log("Worker", Worker);
+    const noiaClient = new NoiaClient(() => new Worker())
+    // NoiaClientContainer.initialize(noiaClient)
+    console.log('QmXpc5hcg4cwvkLnEhnD9ymfjNtrVudKj7rd36WLQUcBGt')
     var self = this
+    console.log("Download", noiaClient.download)
     noiaClient.download({
-      src: 'ipfs:QmNfSFD8Ri1mrV8uk58Jq8iTDhUaG4jkzQ4wdBJbkmxxoP'
-    }).then(self.imageBytes = console.log('ttt ' + self.imageBytes))
+      src: 'ipfs:QmXpc5hcg4cwvkLnEhnD9ymfjNtrVudKj7rd36WLQUcBGt'
+    }).then(data => {
+      self.imageBase64 = bytesToBase64(data)
+      // add component dynamicaly
+      // console.log('data:image/png;base64,' + self.imageBase64)
+      // return 'done'
+    })
 
     // console.info(`Image downloaded (${imageBytes.length} bytes)`)
-    console.info(bytesToBase64(this.imageBytes))
     // const noiaClient = new NoiaClient(() => new Worker())
     // console.log(await asyncFun())
 
@@ -230,6 +241,9 @@ li.soso{
 li.hate{
    background: rgba(104, 167, 248, 0.425);
 }
+img.small {
+    width: 310px;
+}
 li {
  vertical-align: top;
     margin: 8px 0;
@@ -253,7 +267,14 @@ ol {
   padding: 20px;
   transition: all 0.2s;
 }
-
+li:hover img.small{
+    display:block;
+    width: 310px;
+    z-index: 10000;
+}
+img.small {
+    display: none;
+}
 
 h2 {
   font-weight: bold;
