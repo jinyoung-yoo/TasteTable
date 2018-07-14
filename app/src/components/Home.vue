@@ -1,8 +1,8 @@
 <template>
 
   <div class="hello">
-    
-    
+
+
 
 
     <body>
@@ -27,7 +27,7 @@
         </div>
       </div>
     </header>
-    
+
     <!-- Icons Grid -->
     <section class="features-icons bg-light text-center">
       <div class="container">
@@ -69,14 +69,14 @@
       <div class="container-fluid p-0">
         <div class="row no-gutters">
 
-    
-            
+
+
       <li v-for="table in tables"  v-bind:key='table.id' class="all_hover_button"
         v-on:click="createTaste(table.text)">
         <tastetable  v-bind:score="table.scores" v-bind:name="table.text">
         </tastetable>
       </li>
-    
+
 
         </div>
       </div>
@@ -85,7 +85,7 @@
     <!-- Testimonials -->
     <section class="testimonials text-center bg-light">
       <div class="container">
-       
+
       </div>
     </section>
 
@@ -93,19 +93,20 @@
     <section class="call-to-action text-white text-center">
       <div class="overlay"></div>
       <div class="container">
-        
+
       </div>
     </section>
 
 
     </body>
-    
-    
+
+
   </div>
 </template>
 
 <script>
 // import Vue from 'vue'
+/* eslint-disable */
 import Web3 from 'web3'
 import router from '../router'
 export default {
@@ -135,11 +136,11 @@ export default {
       this.getContract()
     },
     getContract () {
-      var TutorialTokenArtifact = require('../../../build/contracts/TutorialToken.json')
-      this.contracts.TutorialToken = this.$TruffleContract(TutorialTokenArtifact)
-      this.contracts.TutorialToken.setProvider(this.web3Provider)
+      var TemplateArtifact = require('../../../build/contracts/Template.json')
+      this.contracts.Template = this.$TruffleContract(TemplateArtifact)
+      this.contracts.Template.setProvider(this.web3Provider)
       this.networkCheck()
-      this.getBalances()
+      this.getTables()
     },
     networkCheck () {
       web3.version.getNetwork((err, netId) => {
@@ -162,8 +163,8 @@ export default {
         }
       })
     },
-    getBalances (adopters, account) {
-      console.log('getting balances...')
+    getTables (adopters, account) {
+      console.log('getting templates...')
       web3.eth.getAccounts((error, accounts) => {
         if (error) {
           console.log(error)
@@ -171,16 +172,30 @@ export default {
         }
         this.account = accounts[0]
         console.log(accounts)
-        this.contracts.TutorialToken.deployed().then((instance) => {
-          var tutorialTokenInstance = instance
+            this.contracts.Template.deployed().then((instance) => {
+              var tutorialTokenInstance = instance
 
-          return tutorialTokenInstance.balanceOf(this.account)
-        }).then((result) => {
-          console.log(result)
-          this.balance = result.c[0]
-        }).catch((err) => {
-          console.log(err.message)
-        })
+              return tutorialTokenInstance.balanceOf(this.account)
+            }).then((result) => {
+              console.log(result)
+              this.balance = result.c[0]
+            }).catch((err) => {
+              console.log(err.message)
+            })
+
+        for(var i=0;i<3;i++){
+          this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[0].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')});
+          console.log("yunjin");
+          console.log(this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[0].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')}));
+          this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[1].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')});
+          this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[2]}).then(function(value) {return value.toNumber();});
+          this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[3]}).then(function(value) {return value.toNumber();});
+        }
+
+        //Template.deployed().then(function(instance){ return instance.getTemplate.call(0)}).then(function(v){return v[0].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')});
+        //Template.deployed().then(function(instance){ return instance.getTemplate.call(0)}).then(function(v){return v[1].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')});
+        //Template.deployed().then(function(instance){ return instance.getTemplate.call(0)}).then(function(v){return v[2]}).then(function(value) {return value.toNumber();});
+        //Template.deployed().then(function(instance){ return instance.getTemplate.call(0)}).then(function(v){return v[3]}).then(function(value) {return value.toNumber();});
       })
     },
     makeTransfer () {
@@ -219,7 +234,7 @@ export default {
       contracts: {},
       account: null,
       tables: [
-        {
+        /*{
           'text': 'Travel',
           'scores': [0, 0, 0, 0, 0, 0, 0, 0, 0]
         },
@@ -230,7 +245,7 @@ export default {
         {
           'text': 'Dating',
           'scores': [0, 0, 0, 0, 0, 0, 0, 0, 0]
-        }
+        }*/
       ]
     }
   }
