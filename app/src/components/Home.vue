@@ -5,25 +5,26 @@
 
 
 
-    <body>
-
     <!-- Masthead -->
     <header class="masthead text-white text-center">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Taste Table is the most easiest & decentralized matching solution via blockchain.</h1>
+            <h1 class="mb-5">Taste Table is the most easiest <br>& decentralized matching solution via blockchain.</h1>
           </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <div class="col-md-12">
             <form>
               <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                <div class="col-12 mb-md-0">
+                  <input type="notice" class="form-control form-control-lg" v-model="notice">
                 </div>
               </div>
+              
             </form>
+            
           </div>
+          
         </div>
       </div>
     </header>
@@ -35,9 +36,9 @@
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
-                <i class="icon-screen-desktop m-auto text-primary"></i>
+                <img src="/static/img/icon2.png" class="icon_size">
               </div>
-              <h3>1</h3>
+              <h3>Secure User Taste Data</h3>
               <p class="lead mb-0">You can easy to write your taste table, can be compared with others immediately.
 </p>
             </div>
@@ -45,18 +46,18 @@
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
-                <i class="icon-layers m-auto text-primary"></i>
+                <img src="/static/img/discount.png" class="icon_size">
               </div>
-              <h3>2</h3>
+              <h3>Universial Matching Score System</h3>
               <p class="lead mb-0">The result of matching is basically provided as % form.</p>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
-                <i class="icon-check m-auto text-primary"></i>
+                <img src="/static/img/ethereum.png" class="icon_size">
               </div>
-              <h3>3</h3>
+              <h3>Decentralized Smart Contracts</h3>
               <p class="lead mb-0">If you want to know the intersections of matching, you can get it with a certain amount of pay.</p>
             </div>
           </div>
@@ -150,16 +151,20 @@ export default {
         }
         switch (netId) {
           case '1':
-            console.log('This is mainnet')
+            this.notice = 'This is mainnet'
+            console.log(this.notice)
             break
           case '2':
-            console.log('This is the deprecated Morden test network.')
+            this.notice = 'This is the deprecated Morden test network.'
+            console.log(this.notice)
             break
           case '3':
-            console.log('This is the ropsten test network.')
+            this.notice = 'This is the ropsten test network.'
+            console.log(this.notice)
             break
           default:
-            console.log('This is an unknown network.')
+            this.notice = 'This is an unknown network.'
+            console.log(this.notice)
         }
       })
     },
@@ -226,6 +231,7 @@ export default {
   },
   data () {
     return {
+      notice: '',
       toAddress: null,
       toAmount: 0,
       web3: null,
@@ -260,7 +266,11 @@ li.all_hover_button:hover {
     background-color: #aac1ff;
     cursor: pointer;
 }
-
+img.icon_size {
+    width: 70px;
+    margin: 50px;
+    margin-bottom: 10px;
+}
 h1,
 h2,
 h3,

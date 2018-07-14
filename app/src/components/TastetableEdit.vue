@@ -23,7 +23,9 @@ export default {
   props: ['score', 'name', 'mode'],
   methods: {
     save: function () {
+      alert("I will Save!");
       console.log(this.tables)
+      alert("Saved!");
     }
   },
   data () {
