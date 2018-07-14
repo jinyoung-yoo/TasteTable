@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Tables from '@/components/Tables'
+import Home from '@/components/Home'
+// import Tables from '@/components/Tables'
 import Matching from '@/components/Matching'
 import New from '@/components/New'
 import Me from '@/components/Me'
@@ -11,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Tables',
-      component: Tables
+      name: 'Home',
+      component: Home
     },
     {
       path: '/me',
