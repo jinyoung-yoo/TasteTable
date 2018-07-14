@@ -19,59 +19,8 @@
         id= 'mytable'>
             {{ cell.text }}
         </li>
-<<<<<<< HEAD
         <div>
         <textarea cols="30" rows="1"></textarea>
-=======
-         
-        </ol>
-    </div>
-    <div id="tables">
-      <div id="mytable">
-      <ol>
-      <li id=1></li>
-      <li id=2></li>
-      <li id=3></li>
-      </ol>
-      <ol>
-      <li id=4></li>
-      <li id=5></li>
-      <li id=6></li>
-      </ol>
-      <ol>
-      <li id=7></li>
-      <li id=8></li>
-      <li id=9></li>
-      </ol>
-      </div>
-      <div id="targettable">
-      <ol>
-      <li id=1></li>
-      <li id=2></li>
-      <li id=3></li>
-      </ol>
-      <ol>
-      <li id=4></li>
-      <li id=5></li>
-      <li id=6></li>
-      </ol>
-      <ol>
-      <li id=7></li>
-      <li id=8></li>
-      <li id=9></li>
-      </ol>
-      </div>
-    </div>
-    
-  </div>
-
-  <div id="petsRow" class="row">
-    <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">My Wallet</h3>
-          <sub>{{account}}</sub>
->>>>>>> dace608bfc9438513c5cff4dca49c7a8c6e0cfad
         </div>
         </div>
         <div class="col-xs-6 col-md-4">
