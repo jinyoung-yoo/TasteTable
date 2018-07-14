@@ -51,7 +51,7 @@
 	{
 		"tname_kr": "음식",
 		"tname_en": "Food",
-		"taste": [{
+		"tastes": [{
 			"name_kr": "짜장면",
 			"name_en": "Jajangmyeon",
 			"image_name": "jajangmyeon.jpg",
@@ -99,9 +99,9 @@
 		}]
 	},
 	{
-		"tid": "3",
-		"name": "date",
-		"taste": [{
+		"tname_kr": "데이트",
+		"name": "Date",
+		"tastes": [{
 			"name_kr": "나홀로여행",
 			"name_en": "AloneTravel",
 			"image_name": "alonetravel.png",
