@@ -1,0 +1,32 @@
+{
+	"userTaste1": {
+		"userName": "Yunjin",
+		"tasteTables": {
+			"taste1": {
+				"name_en": "Travel",
+				"scores": [1, 0, 0, 0, -1, 0, 1, 1, -1]
+			},
+			"taste2": {
+				"name_en": "Date",
+				"scores": [1, 1, 1, 0, 0, 0, -1, -1, -1]
+			},
+			"taste3": {
+				"name_en": "Food",
+				"scores": [1, 0, 0, 0, 0, 0, -1, 0, 0]
+			}
+		}
+	},
+	"userTaste2": {
+		"userName": "Seungwoo",
+		"tasteTables": {
+			"taste1": {
+				"name_en": "Food",
+				"scores": [1, 0, 1, 0, 1, 0, 1, 1, 1]
+			},
+			"taste2": {
+				"name_en": "Date",
+				"scores": [1, 1, -1, 0, -1, 0, 1, -1, 1]
+			}
+		}
+	}
+}
