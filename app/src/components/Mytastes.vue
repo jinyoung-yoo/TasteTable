@@ -6,9 +6,9 @@
         <hr/>
         </div>
     </div>
-    <div class='col-xs-12 col-sm-8 col-sm-push-2'>
+    <div class=''>
       <ol class="my">
-        <li v-for='log in logs' v-bind:key='log.id'>
+        <li class="my" v-for='log in logs' v-bind:key='log.id'>
           <tastetable v-bind:score="log.scores" v-bind:name="log.text">
           </tastetable>
         </li>
@@ -18,7 +18,9 @@
 
 </template>
 <style>
- 
+ li.my {
+    display: inline-block;
+}
 </style>
 <script>
 // 좋아, 소소, 선택안함, 싫어

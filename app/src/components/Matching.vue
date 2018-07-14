@@ -7,9 +7,9 @@
     </div>
         
         <div class="col-xs-6 col-md-4">
-          <ol><li v-for='cell in tables' 
-          v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
-          id= 'mytable'>
+          <ol class="matching"><li v-bind:key='cell.id' v-for="cell in tables" 
+          v-bind:class="{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}" 
+          id= "mytable" >
               {{ cell.text }}
           </li></ol>
         <div>
@@ -17,9 +17,9 @@
         </div>
         </div>
         <div class="col-xs-6 col-md-4">
-          <ol><li v-for='cell in tables' 
-          v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
-          id='targettable'>
+          <ol class="matching"><li v-bind:key='cell.id' v-for="cell in tables" 
+          v-bind:class="{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}" 
+          id="targettable">
               {{ cell.text }}
           </li></ol>
         <textarea cols="30" rows="1"></textarea>
@@ -42,7 +42,7 @@ body {
   font-family: Helvetica;
 }
 
-ol li {
+ol.matching li {
  vertical-align: top;
     margin: 8px 0;
     display: inline-block;

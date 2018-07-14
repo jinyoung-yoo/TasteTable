@@ -1,7 +1,7 @@
 <template>
     <div>
         <ol class="table" v-for='table in tables' v-bind:key='table.id' v-if="table.tname_en == tname_en" >
-            <h5>취향 테이블 : {{table.tname_kr}}</h5>  
+        <h5>취향 테이블 : {{table.tname_kr}}</h5>  
         <li v-for='(taste, i) in table.tastes' v-bind:key='i'
         v-bind:class='{ null : score[i] == 0, good : score[i] == 1,
             soso : score[i] == 2,
@@ -203,5 +203,8 @@ ol.table li {
     text-align: center;
     /* cursor: pointer; */
     height: 60px;
+}
+ol.table {
+    width: 240px;
 }
 </style>
