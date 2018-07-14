@@ -3,14 +3,15 @@
         <ol class="table" v-for='table in tables' v-bind:key='table.id' v-if="table.tname_en == tname_en" >
         <h5>취향 테이블 : {{table.tname_kr}}</h5>  
 
-<ol>
-    <li v-for="cell in table.tastes" 
+<ol class="edit">
+    <li v-for="cell in table.tastes"  v-bind:key='cell.id' 
     v-bind:class="{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2, 
      hate : cell.taste == 3}" v-on:click="cell.taste = (cell.taste + 1) % 4">
           {{ cell.name_kr }}   
     </li>
   </ol>
   </ol>
+  <button v-on:click="save()">Save</button>
     </div>
 </template>
 
@@ -20,6 +21,11 @@
 export default {
   name: 'app',
   props: ['score', 'name', 'mode'],
+  methods: {
+    save: function () {
+      console.log(this.tables)
+    }
+  },
   data () {
     return {
       tname_en: this.name,
@@ -270,7 +276,9 @@ export default {
 </script>
 
 <style>
-
+ol.edit {
+    width: 260px;
+}
 li.good{
    background: rgba(248, 114, 104, 0.425);
 }

@@ -1,12 +1,14 @@
 <template>
   <div class="hello">
-    당신의 취향을 선택해주세요 <br>
-    빨강 : 싫은것 <br>
-    노랑 : 보통 <br>
-    파랑 : 좋은것 <br>
+    Please choose your taste <br>
+<span class="hate">Red</span>: Hate<br>
+<span class="soso">Yellow</span>: Normal<br>
+<span class="like">Blue</span>: Like<br>
+<div class="center">
       <TastetableEdit v-bind:score="scores" v-bind:name="tableId" v-bind:mode="edit">
           </TastetableEdit>
   </div>
+</div>
 </template>
 
 <script>
@@ -31,9 +33,24 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
+
+span.hate{
+   background: rgba(248, 114, 104, 0.425);
+}
+span.soso{
+   background: rgba(239, 248, 104, 0.425);
+}
+span.like{
+   background: rgba(104, 167, 248, 0.425);
+}
 body {
     padding: 20px;
     font-family: Helvetica;
+}
+.center {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 ul {
   list-style-type: none;

@@ -2,12 +2,7 @@
     <div class="container">
         <h2>Create TasteTable</h2>
         <ul>
-        <select v-model="selected">
-          <option disabled value="">Please select one</option>
-          <option name="tastelist" value="date">Date</option>
-          <option name="tastelist" value="travel">Travel</option>
-          <option name="tastelist" value="food">Food</option>
-        </select>
+        New Taste-Table Name :  <input v-model="selected">
         </ul>
     
         <div>
@@ -61,30 +56,73 @@ del {
 </style>
 <script>
 import Web3 from 'web3'
+/* eslint-disable */
 
 export default {
 
   name: 'datetable',
   data () {
     return {
-      toAddress: null,
-      toAmount: 0,
-      web3: null,
-      web3Provider: null,
-      balance: 0,
-      contracts: {},
-      account: null,
       tables: [
-        { i: 1, text: '와인', taste: 0 },
-        { i: 2, text: '양주', taste: 0 },
-        { i: 3, text: '도심 산책', taste: 0 },
-        { i: 4, text: '야경', taste: 0 },
-        { i: 5, text: '해외 여행', taste: 0 },
-        { i: 6, text: '코엑스', taste: 0 },
-        { i: 7, text: '놀이 공원', taste: 0 },
-        { i: 8, text: '소주', taste: 0 },
-        { i: 9, text: '막걸리', taste: 0 }
-      ]
+            {
+          'tname_kr': '데이트',
+          'tname_en': 'Dating',
+          'tastes': [{
+              'name_kr': '놀이공원',
+              'name_en': 'AmusementPark',
+              'image_name': 'amusementpark.jpg',
+              'image_ipfs': 'QmXgEDRpD23zbfevHLyxK3bwXcdvwZmYZJUk7yvro2tttT',
+              taste: 0
+          }, {
+              'name_kr': '카페',
+              'name_en': 'Cafe',
+              'image_name': 'cafe.jpg',
+              'image_ipfs': 'Qmd7X5QASJnQSsx8ydKEJZTQ3UXSn8AE8UfGApjoaCdnuh',
+              taste: 0
+          }, {
+              'name_kr': '도시산책',
+              'name_en': 'CityWalk',
+              'image_name': 'citywalk.jpg',
+              'image_ipfs': 'QmPVRDCrHkv3HJojiK7vvZcoQMkZZVce8RUFzFxQLwLyMs',
+              taste: 0
+          }, {
+              'name_kr': '찜질방',
+              'name_en': 'KoreanSauna',
+              'image_name': 'koreansauna.jpg',
+              'image_ipfs': 'Qme8JRgN3dvhAUHeDMkBcmcqY8w4g7uSfriaP21M1zYUQk',
+              taste: 0
+          }, {
+              'name_kr': '극장',
+              'name_en': 'Theater',
+              'image_name': 'theater.jpg',
+              'image_ipfs': 'QmeHTSDWxse3Nzc2F7nGpzfSg5bdkz4JGhqUUEQiRcmikd',
+              taste: 0
+          }, {
+              'name_kr': '바다',
+              'name_en': 'Sea',
+              'image_name': 'sea.jpg',
+              'image_ipfs': 'QmRWTNLXm2AD9FJR8h7fSWVuhXUGqdXCvJxGKDrEh4yRSF',
+              taste: 0
+          }, {
+              'name_kr': '술',
+              'name_en': 'Alcohol',
+              'image_name': 'alcohol.jpg',
+              'image_ipfs': 'QmRZw2psnke7Y7oYBCzHfH4FsDnEEkZSCeNGng5xmo9yG9',
+              taste: 0
+          }, {
+              'name_kr': '노래방',
+              'name_en': 'Karaoke',
+              'image_name': 'karaoke.jpg',
+              'image_ipfs': 'QmWRwbj9CFp4THamVtZQHPwKjQ12PEo6gB8PuTmdY1D1Ht',
+              taste: 0
+          }, {
+              'name_kr': '운동',
+              'name_en': 'Exercise',
+              'image_name': 'exercise.jpg',
+              'image_ipfs': 'QmQGw4XTX33rUSYWFgKtME7XWifQ94o71iBKMRkpGqJAfW',
+              taste: 0
+          }]
+      }],
     }
   },
 
