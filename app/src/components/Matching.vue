@@ -4,31 +4,24 @@
     <div class="col-xs-12 col-sm-8 col-sm-push-2">
       <h1 class="text-center">Matching</h1>
       <hr/>
-      
-        <select v-model="selected">
-          <option disabled value="">Please select one</option>
-          <option name="tastelist" value="date">Date</option>
-          <option name="tastelist" value="travel">Travel</option>
-          <option name="tastelist" value="food">Food</option>
-        </select>
     </div>
         
         <div class="col-xs-6 col-md-4">
-        <ol><li v-for='cell in tables' 
-        v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
-        id= 'mytable'>
-            {{ cell.text }}
-        </li></ol>
+          <ol><li v-for='cell in tables' 
+          v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
+          id= 'mytable'>
+              {{ cell.text }}
+          </li></ol>
         <div>
         <textarea cols="30" rows="1"></textarea>
         </div>
         </div>
         <div class="col-xs-6 col-md-4">
-        <ol><li v-for='cell in tables' 
-        v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
-        id='targettable'>
-            {{ cell.text }}
-        </li></ol>
+          <ol><li v-for='cell in tables' 
+          v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
+          id='targettable'>
+              {{ cell.text }}
+          </li></ol>
         <textarea cols="30" rows="1"></textarea>
         </div>
     
