@@ -1,45 +1,45 @@
  {
- 	name_kr: "³ªÈ¦·Î¿©Çà",
+ 	name_kr: "ë‚˜í™€ë¡œì—¬í–‰",
  	name_en: "AloneTravel",
  	image_name: "alonetravel.png",
  	image_ipfs: "QmZ8x77VmjBMt5iZcfdsmCJU7WkHTkbeptgt3m9TDXSG4p"
  }, {
- 	name_kr: "µğÁöÅĞµğÅå½º¿©Çà",
+ 	name_kr: "ë””ì§€í„¸ë””í†¡ìŠ¤ì—¬í–‰",
  	name_en: "DigitalDetoxTravel",
  	image_name: "digitaldetoxtravel.png",
  	image_ipfs: "QmXnLteNK8JEcaZJ4M4XTud5QWqH3EBFjPHK3QBrDoim1Y"
  }, {
- 	name_kr: "Æ®·¹Å·¿©Çà",
+ 	name_kr: "íŠ¸ë ˆí‚¹ì—¬í–‰",
  	name_en: "TrekkingTravel",
  	image_name: "trekkingtravel.png",
  	image_ipfs: "QmXpc5hcg4cwvkLnEhnD9ymfjNtrVudKj7rd36WLQUcBGt"
  }, {
- 	name_kr: "È¨½ºÅ×ÀÌ¿©Çà",
+ 	name_kr: "í™ˆìŠ¤í…Œì´ì—¬í–‰",
  	name_en: "HomestayTravel",
  	image_name: "homestaytravel.png",
  	image_ipfs: "QmXEJrk7i4W1h31LzwxQHZepxNamyCq3MCifVm5Jb6QSH7"
  }, {
- 	name_kr: "Èú¸µ¿©Çà",
+ 	name_kr: "íë§ì—¬í–‰",
  	name_en: "HealingTravel",
  	image_name: "healingtravel",
  	image_ipfs: "Qmb4xzjsgmha6yhV66MVXqGjyTs8mDzzTD3f9JN4QPbZbX"
  }, {
- 	name_kr: "¼ö»ó½ºÆ÷Ã÷¿©Çà",
+ 	name_kr: "ìˆ˜ìƒìŠ¤í¬ì¸ ì—¬í–‰",
  	name_en: "WaterSportsTravel",
  	image_name: "watersportstravel.png",
  	image_ipfs: "QmZVoWR4ymFJzsQu1ij6vgnYJ7PMqoevzh8eCs9odeKCAW"
  }, {
- 	name_kr: "ÀÚ¼±¿©Çà",
+ 	name_kr: "ìì„ ì—¬í–‰",
  	name_en: "VolunteerTravel",
  	image_name: "volunteertravel.png",
  	image_ipfs: "QmTvSZMpDeEx2hhUPC2Gqb5HpUqZ1HWPSMb4g3b1dLbb8b"
  }, {
- 	name_kr: "À½ÁÖ¿©Çà",
+ 	name_kr: "ìŒì£¼ì—¬í–‰",
  	name_en: "DrinkTravel",
  	image_name: "drinktravel.png",
  	image_ipfs: "QmY6N55k9Ub34Rgak46iKW12g1C1hzwWZ5YNtcL8x1kKSj"
  }, {
- 	name_kr: "¾Ö¿Ïµ¿¹°°ú¿©Çà",
+ 	name_kr: "ì• ì™„ë™ë¬¼ê³¼ì—¬í–‰",
  	name_en: "TravelWithPets",
  	image_name: "travelwithpets.png",
  	image_ipfs: "Qma7Pq6RXacAobjbuFwPrM7vLyXXqxEKizRDd29dxU84go"
