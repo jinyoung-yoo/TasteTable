@@ -1,15 +1,26 @@
 <template>
   <div class="hello">
-    
+    당신의 취향을 선택해주세요 <br>
+    빨강 : 싫은것 <br>
+    노랑 : 보통 <br>
+    파랑 : 좋은것 <br>
+      <TastetableEdit v-bind:score="scores" v-bind:name="tableId" v-bind:mode="edit">
+          </TastetableEdit>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'CreateTaste1',
+  props: ['tableId'],
+  components: {
+    'TastetableEdit': () => import('./TastetableEdit')
+  },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      scores: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      edit: true,
+      msg: 'Welcome to Your Vue.js App' + this.tableId
     }
   }
 }

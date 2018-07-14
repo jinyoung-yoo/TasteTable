@@ -36,17 +36,6 @@ li.soso{
 li.hate{
    background: rgba(104, 167, 248, 0.425);
 }
-ol li {
- vertical-align: top;
-    margin: 8px 0;
-    display: inline-block;
-    width: 90px !important;
-    border: 1px solid;
-    margin: 3px;
-    text-align: center;
-    cursor: pointer;
-    height: 90px;
-}
 label{
   cursor: pointer;
 }
