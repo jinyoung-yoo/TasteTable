@@ -13,6 +13,7 @@ Object.defineProperty(Vue.prototype, '$TruffleContract', {value: TruffleContract
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,
