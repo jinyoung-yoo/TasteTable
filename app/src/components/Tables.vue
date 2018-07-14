@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class='container'>
         <h2>취향 테이블 : 데이트</h2>
         <ol>
         <li v-for='cell in tables' 
@@ -8,65 +8,23 @@
             {{ cell.text }}
         </li>
         </ol>
+            <img :src="img.encodedImage">
+
+        <img src='data:image/jpeg;base64,{{bytesToBase64(imageBytes)}}' />
     </div>
 </template>
-<style>
-body {
-  background: #20262E;
-  padding: 20px;
-  font-family: Helvetica;
-}
-li.good{
-   background: rgba(248, 114, 104, 0.425);
-}
-li.soso{
-   background: rgba(239, 248, 104, 0.425);
-}
-li.hate{
-   background: rgba(104, 167, 248, 0.425);
-}
-li {
- vertical-align: top;
-    margin: 8px 0;
-    display: inline-block;
-    width: 42px !important;
-    border: 1px solid;
-    margin: 3px;
-    text-align: center;
-    cursor: pointer;
-    height: 42px;
-}
-label{
-  cursor: pointer;
-}
-ol {
-    width: 350px;
-}
-#app {
-  background: #fff;
-  border-radius: 4px;
-  padding: 20px;
-  transition: all 0.2s;
-}
-
-
-h2 {
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-del {
-  color: rgba(0, 0, 0, 0.3);
-}
-</style>
 <script>
 import Web3 from 'web3'
+
+import { NoiaClient } from '@noia-network/sdk'
+import { bytesToBase64 } from '../utils/base64'
 
 export default {
 
   name: 'Tables',
   data () {
     return {
+      imageBytes: '',
       toAddress: null,
       toAmount: 0,
       web3: null,
@@ -136,6 +94,26 @@ export default {
   },
   mounted () {
     this.getProvider()
+
+
+    const noiaClient = new NoiaClient(() => new Worker());
+    NoiaClientContainer.initialize(noiaClient);
+    // console.log(await asyncFun())
+
+    // asyncFunc().then(v = console.log(v))
+
+
+    //     this.imageBytes = await noiaClient.download({
+    //       src: "ipfs:QmbjpRxxL8TRNayHWysWTFSVht1DZxezSNcK48TUp94UmA"
+    //     });
+
+    var self = this
+    noiaClient.download({
+      src: "ipfs:QmbjpRxxL8TRNayHWysWTFSVht1DZxezSNcK48TUp94UmA"
+    }).then(self.imageBytes = v)
+
+    console.info(`Image downloaded (${imageBytes.length} bytes)`)
+
   },
   methods: {
     getProvider () {
@@ -230,6 +208,53 @@ export default {
 require('bootstrap-css-only')
 </script>
 
-<style lang="css" scoped>
+<style lang='css' scoped>
 
+body {
+  background: #20262E;
+  padding: 20px;
+  font-family: Helvetica;
+}
+li.good{
+   background: rgba(248, 114, 104, 0.425);
+}
+li.soso{
+   background: rgba(239, 248, 104, 0.425);
+}
+li.hate{
+   background: rgba(104, 167, 248, 0.425);
+}
+li {
+ vertical-align: top;
+    margin: 8px 0;
+    display: inline-block;
+    width: 42px !important;
+    border: 1px solid;
+    margin: 3px;
+    text-align: center;
+    cursor: pointer;
+    height: 42px;
+}
+label{
+  cursor: pointer;
+}
+ol {
+    width: 350px;
+}
+#app {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+del {
+  color: rgba(0, 0, 0, 0.3);
+}
 </style>

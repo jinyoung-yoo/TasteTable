@@ -14,6 +14,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "@noia-network/sdk": "github:noia-network/sdk",
     "axios": "^0.16.2",
     "bootstrap-css-only": "^3.3.7",
     "truffle-contract": "^2.0.5",
