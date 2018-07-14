@@ -1,46 +1,46 @@
  {
- 	name_kr: "≥Ó¿Ã∞¯ø¯",
- 	name_en: "AmusementPark",
- 	image_name: "amusementpark.jpg",
- 	image_ipfs: "QmXgEDRpD23zbfevHLyxK3bwXcdvwZmYZJUk7yvro2tttT"
+ 	"name_kr": "ÎÜÄÏù¥Í≥µÏõê",
+ 	"name_en": "AmusementPark",
+ 	"image_name": "amusementpark.jpg",
+ 	"image_ipfs": "QmXgEDRpD23zbfevHLyxK3bwXcdvwZmYZJUk7yvro2tttT"
  }, {
- 	name_kr: "ƒ´∆‰",
- 	name_en: "Cafe",
- 	image_name: "cafe.jpg",
- 	image_ipfs: °∞Qmd7X5QASJnQSsx8ydKEJZTQ3UXSn8AE8UfGApjoaCdnuh°±
+ 	"name_kr": "Ïπ¥Ìéò",
+ 	"name_en": "Cafe",
+ 	"image_name": "cafe.jpg",
+ 	"image_ipfs": "Qmd7X5QASJnQSsx8ydKEJZTQ3UXSn8AE8UfGApjoaCdnuh"
  }, {
- 	name_kr: "µµΩ√ªÍ√•",
- 	name_en: "CityWalk",
- 	image_name: "citywalk.jpg",
- 	image_ipfs: °∞QmPVRDCrHkv3HJojiK7vvZcoQMkZZVce8RUFzFxQLwLyMs°±
+ 	"name_kr": "ÎèÑÏãúÏÇ∞Ï±Ö",
+ 	"name_en": "CityWalk",
+ 	"image_name": "citywalk.jpg",
+ 	"image_ipfs": "QmPVRDCrHkv3HJojiK7vvZcoQMkZZVce8RUFzFxQLwLyMs"
  }, {
- 	name_kr: "¬Ú¡˙πÊ",
- 	name_en: "KoreanSauna",
- 	image_name: "koreansauna.jpg",
- 	image_ipfs: °∞Qme8JRgN3dvhAUHeDMkBcmcqY8w4g7uSfriaP21M1zYUQk°±
+ 	"name_kr": "Ï∞úÏßàÎ∞©",
+ 	"name_en": "KoreanSauna",
+ 	"image_name": "koreansauna.jpg",
+ 	"image_ipfs": "Qme8JRgN3dvhAUHeDMkBcmcqY8w4g7uSfriaP21M1zYUQk"
  }, {
- 	name_kr: "±ÿ¿Â",
- 	name_en: "Theater",
- 	image_name: "theater.jpg",
- 	image_ipfs: °∞QmeHTSDWxse3Nzc2F7nGpzfSg5bdkz4JGhqUUEQiRcmikd°±
+ 	"name_kr": "Í∑πÏû•",
+ 	"name_en": "Theater",
+ 	"image_name": "theater.jpg",
+ 	"image_ipfs": "QmeHTSDWxse3Nzc2F7nGpzfSg5bdkz4JGhqUUEQiRcmikd"
  }, {
- 	name_kr: "πŸ¥Ÿ",
- 	name_en: "Sea",
- 	image_name: "sea.jpg",
- 	image_ipfs: °∞QmRWTNLXm2AD9FJR8h7fSWVuhXUGqdXCvJxGKDrEh4yRSF°±
+ 	"name_kr": "Î∞îÎã§",
+ 	"name_en": "Sea",
+ 	"image_name": "sea.jpg",
+ 	"image_ipfs": "QmRWTNLXm2AD9FJR8h7fSWVuhXUGqdXCvJxGKDrEh4yRSF"
  }, {
- 	name_kr: "º˙",
- 	name_en: "Alcohol",
- 	image_name: "alcohol.jpg",
- 	image_ipfs: °∞QmRZw2psnke7Y7oYBCzHfH4FsDnEEkZSCeNGng5xmo9yG9°±
+ 	"name_kr": "Ïà†",
+ 	"name_en": "Alcohol",
+ 	"image_name": "alcohol.jpg",
+ 	"image_ipfs": "QmRZw2psnke7Y7oYBCzHfH4FsDnEEkZSCeNGng5xmo9yG9"
  }, {
- 	name_kr: "≥Î∑°πÊ",
- 	name_en: "Karaoke",
- 	image_name: "karaoke.jpg",
- 	image_ipfs: °∞QmWRwbj9CFp4THamVtZQHPwKjQ12PEo6gB8PuTmdY1D1Ht°±
+ 	"name_kr": "ÎÖ∏ÎûòÎ∞©",
+ 	"name_en": "Karaoke",
+ 	"image_name": "karaoke.jpg",
+ 	"image_ipfs": "QmWRwbj9CFp4THamVtZQHPwKjQ12PEo6gB8PuTmdY1D1Ht"
  }, {
- 	name_kr: "øÓµø",
- 	name_en: "Exercise",
- 	image_name: "exercise.jpg",
- 	image_ipfs: °∞QmQGw4XTX33rUSYWFgKtME7XWifQ94o71iBKMRkpGqJAfW°±
- },
+ 	"name_kr": "Ïö¥Îèô",
+ 	"name_en": "Exercise",
+ 	"image_name": "exercise.jpg",
+ 	"image_ipfs": "QmQGw4XTX33rUSYWFgKtME7XWifQ94o71iBKMRkpGqJAfW"
+ }
