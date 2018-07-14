@@ -120,8 +120,8 @@
 		}
 	},
 	"template3": {
-		"tname_kr": "데이트",
-		"name": "Date",
+		"tname_kr": "여행",
+		"name": "Travel",
 		"tastes": {
 			"taste1": {
 				"name_kr": "나홀로여행",
