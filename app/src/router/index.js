@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Wallet from '@/components/Wallet'
 import Tables from '@/components/Tables'
+import Matching from '@/components/Matching'
+import New from '@/components/New'
+import Me from '@/components/Me'
 
 Vue.use(Router)
 
@@ -13,9 +15,19 @@ export default new Router({
       component: Tables
     },
     {
-      path: '/Wallet',
-      name: 'Wallet',
-      component: Wallet
+      path: '/me',
+      name: 'Me',
+      component: Me
+    },
+    {
+      path: '/matching',
+      name: 'Matching',
+      component: Matching
+    },
+    {
+      path: '/new',
+      name: 'New',
+      component: New
     }
   ]
 })
