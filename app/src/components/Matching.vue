@@ -14,21 +14,21 @@
     </div>
         
         <div class="col-xs-6 col-md-4">
-        <li v-for='cell in tables' 
+        <ol><li v-for='cell in tables' 
         v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
         id= 'mytable'>
             {{ cell.text }}
-        </li>
+        </li></ol>
         <div>
         <textarea cols="30" rows="1"></textarea>
         </div>
         </div>
         <div class="col-xs-6 col-md-4">
-        <li v-for='cell in tables' 
+        <ol><li v-for='cell in tables' 
         v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
         id='targettable'>
             {{ cell.text }}
-        </li>
+        </li></ol>
         <textarea cols="30" rows="1"></textarea>
         </div>
     

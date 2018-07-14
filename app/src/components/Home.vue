@@ -36,7 +36,11 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
-
+body {
+    background: #20262E;
+    padding: 20px;
+    font-family: Helvetica;
+}
 ul {
   list-style-type: none;
   padding: 0;

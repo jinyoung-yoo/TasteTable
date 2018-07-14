@@ -37,7 +37,7 @@ li.soso{
 li.hate{
    background: rgba(104, 167, 248, 0.425);
 }
-li {
+ol li {
  vertical-align: top;
     margin: 8px 0;
     display: inline-block;
