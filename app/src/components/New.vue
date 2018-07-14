@@ -1,40 +1,82 @@
 <template>
- <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-push-2">
-      <h1 class="text-center">New</h1>
-      <hr/>
-      <br/>
+    <div class="container">
+        <h2>Create TasteTable</h2>
+        <ul>
+        <form>
+        <input type="radio" name="tastelist" value="date"checked>Date<br>
+        <input type="radio" name="tastelist" value="travel">Travel<br>
+        <input type="radio" name="tastelist" value="food">Food
+        </form>
+        </ul>
+        <div id="tables">
+      
+      
     </div>
-  </div>
-
-  <div id="petsRow" class="row">
-    <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">My Wallet</h3>
-          <sub>{{account}}</sub>
-        </div>
-        <div class="panel-body">
-          <h4>Balance</h4>
-          <strong>Balance</strong>: <span id="TTBalance" v-html='balance'></span> TT<br/><br/>
-          <h4>Transfer</h4>
-          <input type="text" class="form-control" id="TTTransferAddress" v-model='toAddress' placeholder="Address" />
-          <input type="text" class="form-control" id="TTTransferAmount" v-model='toAmount' placeholder="Amount" />
-          <button class="btn btn-primary" id="transferButton" type="button" @click.prevent='makeTransfer()'>Transfer</button>
-        </div>
-      </div>
+        <ol>
+        <li v-for='cell in tables' 
+        v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
+        v-on:click='cell.taste = (cell.taste + 1) % 4'>
+            {{ cell.text }}
+        </li>
+         
+        </ol>
     </div>
-  </div>
-</div>
 </template>
+<style>
+body {
+  background: #20262E;
+  padding: 20px;
+  font-family: Helvetica;
+}
+li.good{
+   background: rgba(248, 114, 104, 0.425);
+}
+li.soso{
+   background: rgba(239, 248, 104, 0.425);
+}
+li.hate{
+   background: rgba(104, 167, 248, 0.425);
+}
+li {
+ vertical-align: top;
+    margin: 8px 0;
+    display: inline-block;
+    width: 90px !important;
+    border: 1px solid;
+    margin: 3px;
+    text-align: center;
+    cursor: pointer;
+    height: 90px;
+}
+label{
+  cursor: pointer;
+}
+ol {
+    width: 350px;
+}
+#app {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  transition: all 0.2s;
+}
 
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+del {
+  color: rgba(0, 0, 0, 0.3);
+}
+</style>
 <script>
 import Web3 from 'web3'
 
 export default {
 
-  name: 'Wallet',
+  name: 'datetable',
   data () {
     return {
       toAddress: null,
@@ -43,9 +85,21 @@ export default {
       web3Provider: null,
       balance: 0,
       contracts: {},
-      account: null
+      account: null,
+      tables: [
+        { i: 1, text: '와인', taste: 0 },
+        { i: 2, text: '양주', taste: 0 },
+        { i: 3, text: '도심 산책', taste: 0 },
+        { i: 4, text: '야경', taste: 0 },
+        { i: 5, text: '해외 여행', taste: 0 },
+        { i: 6, text: '코엑스', taste: 0 },
+        { i: 7, text: '놀이 공원', taste: 0 },
+        { i: 8, text: '소주', taste: 0 },
+        { i: 9, text: '막걸리', taste: 0 }
+      ]
     }
   },
+
   mounted () {
     this.getProvider()
   },
