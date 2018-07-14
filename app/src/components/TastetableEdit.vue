@@ -3,20 +3,14 @@
         <ol class="table" v-for='table in tables' v-bind:key='table.id' v-if="table.tname_en == tname_en" >
         <h5>취향 테이블 : {{table.tname_kr}}</h5>  
 
-        <ol>
-    <li v-for="cell in tables" v-bind:class="{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}" v-on:click="cell.taste = (cell.taste + 1) % 4">
-          {{ cell.text }}   
+<ol>
+    <li v-for="cell in table.tastes" 
+    v-bind:class="{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2, 
+     hate : cell.taste == 3}" v-on:click="cell.taste = (cell.taste + 1) % 4">
+          {{ cell.name_kr }}   
     </li>
   </ol>
-
-
-        <li v-for='(taste, i) in table.tastes' v-bind:key='i'
-        v-bind:class='{ null : scores[i] == 0, good : scores[i] == 1,
-            soso : scores[i] == 2,
-            hate : scores[i] == 3}' 
->            {{ taste.name_kr }}
-        </li>
-        </ol>
+  </ol>
     </div>
 </template>
 
