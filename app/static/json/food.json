@@ -1,46 +1,46 @@
 {
-    name_kr: "¬•¿Â∏È",
-    name_en: "Jajangmyeon",
-    image_name: "jajangmyeon.jpg",
-    image_ipfs: "QmZuhD32MY1ZYRJzZ5HpUx9MzCkThpGkSspJ3YEEDKiqNa"
+    "name_kr": "ÏßúÏû•Î©¥",
+    "name_en": "Jajangmyeon",
+    "image_name": "jajangmyeon.jpg",
+    "image_ipfs": "QmZuhD32MY1ZYRJzZ5HpUx9MzCkThpGkSspJ3YEEDKiqNa"
 }, {
-    name_kr: "√ π‰ ",
-    name_en: "Sushi ",
-    image_name: "sushi.jpg ",
-    image_ipfs: "QmRayC1eT8ZdGSpkqjNSAMQC3zed51vfTmGyYk7VKzBJZr"
+    "name_kr": "Ï¥àÎ∞• ",
+    "name_en": "Sushi ",
+    "image_name": "sushi.jpg ",
+    "image_ipfs": "QmRayC1eT8ZdGSpkqjNSAMQC3zed51vfTmGyYk7VKzBJZr"
 }, {
-    name_kr: "ªÔ∞„ªÏ",
-    name_en: "PorkBelly",
-    image_name: "porkbelly.png",
-    image_ipfs: "QmXowdFxfcGgBpQ38eNXsQtJEqSxLP11dVEvrp1RUj3mUJ"
+    "name_kr": "ÏÇºÍ≤πÏÇ¥",
+    "name_en": "PorkBelly",
+    "image_name": "porkbelly.png",
+    "image_ipfs": "QmXowdFxfcGgBpQ38eNXsQtJEqSxLP11dVEvrp1RUj3mUJ"
 }, {
-    name_kr: "ƒø∏Æ",
-    name_en: "Curry",
-    image_name: "curry.jpg",
-    image_ipfs: "QmagYZ9ZJXzgBu8oPX25MvqGNpqDEugfVfJT2aTjeqKxR1"
+    "name_kr": "Ïª§Î¶¨",
+    "name_en": "Curry",
+    "image_name": "curry.jpg",
+    "image_ipfs": "QmagYZ9ZJXzgBu8oPX25MvqGNpqDEugfVfJT2aTjeqKxR1"
 }, {
-    name_kr: "Ω∫≈◊¿Ã≈©",
-    name_en: "Steak",
-    image_name: "steak.jpg",
-    image_ipfs: "QmSyvcu1FwNzgvVFRDwQX6cEawJApjNCekkKVSTY1tTEx9"
+    "name_kr": "Ïä§ÌÖåÏù¥ÌÅ¨",
+    "name_en": "Steak",
+    "image_name": "steak.jpg",
+    "image_ipfs": "QmSyvcu1FwNzgvVFRDwQX6cEawJApjNCekkKVSTY1tTEx9"
 }, {
-    name_kr: "≥√∏È",
-    name_en: "ColdNoodles",
-    image_name: "coldnoodles.jpg",
-    image_ipfs: ""
+    "name_kr": "ÎÉâÎ©¥",
+    "name_en": "ColdNoodles",
+    "image_name": "coldnoodles.jpg",
+    "image_ipfs": "QmbDYM8wSr94KBnihwzCZUp2KcHnacDxZy3jVL1w4sMgof"
 }, {
-    name_kr: "ƒ°≈≤",
-    name_en: "Chicken",
-    image_name: "chicken.jpg",
-    image_ipfs: ""
+    "name_kr": "ÏπòÌÇ®",
+    "name_en": "Chicken",
+    "image_name": "chicken.jpg",
+    "image_ipfs": "QmV42Byrq9px1k8fMj1cMPg87fvYBWS8r8jZR15N6t8ddV"
 }, {
-    name_kr: "∂Û∏È",
-    name_en: "Ramen",
-    image_name: "ramen.jpg",
-    image_ipfs: ""
+    "name_kr": "ÎùºÎ©¥",
+    "name_en": "Ramen",
+    "image_name": "ramen.jpg",
+    "image_ipfs": "QmavQJXQijSS25bQbtTsbTQoHSwozRykxPNViTXxvoEHKX"
 }, {
-    name_kr: "∂±∫∫¿Ã",
-    name_en: "Tteokbokki",
-    image_name: "tteokbokki.jpg",
-    image_ipfs: ""
+    "name_kr": "Îñ°Î≥∂Ïù¥",
+    "name_en": "Tteokbokki",
+    "image_name": "tteokbokki.jpg",
+    "image_ipfs": "QmZ5rgyVmGbaDrotUM1yUMvgejUD5TiVzEh1NuGVxwLpvj"
 },
