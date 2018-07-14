@@ -11,7 +11,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Taste Table is the most easiest & decentralized matching solution via blockchain.</h1>
+            <h1 class="mb-5">Taste Table is the most easiest <br>& decentralized matching solution via blockchain.</h1>
           </div>
           <div class="col-md-12">
             <form>

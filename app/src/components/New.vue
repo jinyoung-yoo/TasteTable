@@ -2,7 +2,13 @@
     <div class="container">
         <h2>Create TasteTable</h2>
         <ul>
-        New Taste-Table Name :  <input v-model="selected">
+        New Taste-Table Name(Kr) :  <input v-model="selected">      
+        <br>
+
+        New Taste-Table Name(En) :  <input v-model="selected_en">
+        <br>
+        New Taste-Table Size(width) :  <input v-model="size" type="number">
+
         </ul>
     
         <div>
@@ -15,6 +21,8 @@
         </li>
         </ol>
         </div>
+
+        <button v-on:click="save()">Save</button>
     </div>
 </template>
 <style>
@@ -63,6 +71,10 @@ export default {
   name: 'datetable',
   data () {
     return {
+      selected_en : 'politics',
+      selected : '정치',
+      size : 3,
+      new : [],
       tables: [
             {
           'tname_kr': '데이트',
@@ -130,6 +142,9 @@ export default {
     this.getProvider()
   },
   methods: {
+    save: function () {
+      console.log(this.new)
+    },
     getProvider () {
       // Checking if Web3 has been injected by the browser (Mist/MetaMask)
       if (typeof web3 !== 'undefined') {

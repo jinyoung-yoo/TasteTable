@@ -10,6 +10,8 @@
         <li class="navbar-brand"><router-link to="/my">My Tastes</router-link></li>
       </div>
     </nav>
+
+<hr>
     <router-view></router-view>
   </div>
 </template>
