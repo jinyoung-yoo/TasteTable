@@ -6,6 +6,7 @@ import Matching from '@/components/Matching'
 import New from '@/components/New'
 import Mytastes from '@/components/Mytastes'
 import CreateTaste from '@/components/CreateTaste'
+// import TasteTable from '@/components/TasteTable'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/create_taste',
       name: 'CreateTaste',
       component: CreateTaste
+    },
+    { path: '/create_taste/:tableId',
+      name: 'CreateTaste1',
+      component: CreateTaste,
+      props: true
     },
     {
       path: '/matching',

@@ -21,6 +21,9 @@
  li.my {
     display: inline-block;
 }
+ol.my {
+    display: initial;
+}
 </style>
 <script>
 // 좋아, 소소, 선택안함, 싫어

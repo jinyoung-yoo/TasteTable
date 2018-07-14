@@ -74,7 +74,8 @@
       <h3>Table List : </h3>
           <ul id="tables">
             
-      <li v-for="table in tables"  v-bind:key='table.id' class="all_hover_button">
+      <li v-for="table in tables"  v-bind:key='table.id' class="all_hover_button"
+        v-on:click="createTaste(table.text)">
         <tastetable  v-bind:score="table.scores" v-bind:name="table.text">
         </tastetable>
       </li>
@@ -146,10 +147,18 @@
 </template>
 
 <script>
+// import Vue from 'vue'
+import router from '../router'
 export default {
   name: 'home',
   components: {
     'tastetable': () => import('./tastetable')
+  },
+  methods: {
+    createTaste (tableId) {
+      console.log('tableId')
+      router.push({name: 'CreateTaste1', params: { tableId: tableId }})
+    }
   },
   data () {
     return {
