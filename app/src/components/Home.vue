@@ -18,16 +18,18 @@
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <form>
               <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-                </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-                </div>
+               
+               
               </div>
+              
             </form>
+            
           </div>
+          
         </div>
+         <div>
+                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+         </div>
       </div>
     </header>
     
@@ -38,7 +40,7 @@
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
-                <i class="icon-screen-desktop m-auto text-primary"></i>
+                <img src="/static/img/discount.png">
               </div>
               <h3>1</h3>
               <p class="lead mb-0">You can easy to write your taste table, can be compared with others immediately.
