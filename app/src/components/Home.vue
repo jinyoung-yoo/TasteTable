@@ -150,16 +150,20 @@ export default {
         }
         switch (netId) {
           case '1':
-            console.log('This is mainnet')
+            this.notice = 'This is mainnet'
+            console.log(this.notice)
             break
           case '2':
-            console.log('This is the deprecated Morden test network.')
+            this.notice = 'This is the deprecated Morden test network.'
+            console.log(this.notice)
             break
           case '3':
-            console.log('This is the ropsten test network.')
+            this.notice = 'This is the ropsten test network.'
+            console.log(this.notice)
             break
           default:
-            console.log('This is an unknown network.')
+            this.notice = 'This is an unknown network.'
+            console.log(this.notice)
         }
       })
     },
@@ -212,6 +216,7 @@ export default {
   },
   data () {
     return {
+      notice: '',
       toAddress: null,
       toAmount: 0,
       web3: null,
