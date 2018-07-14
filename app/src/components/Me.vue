@@ -15,23 +15,20 @@
         </ul>
       </div>
     </div>
-    <div class='col-xs-12 col-sm-8 col-sm-push-2>
+    <div class='col-xs-12 col-sm-8 col-sm-push-2'>
       <ol>
-        <li v-for='cell in tables' 
-        v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
-        v-on:click='cell.taste = (cell.taste + 1) % 4'>
+       <li v-for='cell in tables' 
+          v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
+          v-on:click='cell.taste = (cell.taste + 1) % 4'>
             {{ cell.text }}
         </li>
-      </ol>
-        
+      </ol>      
     </div>
   </div>
 
 </template>
 <style>
-  .taste{
-    
-  }
+ 
 </style>
 <script>
 
