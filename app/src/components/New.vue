@@ -10,7 +10,7 @@
         </select>
         </ul>
     
-        <div class="mx-auto">
+        <div>
         <ol>
         <li v-for='cell in tables' 
         v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
