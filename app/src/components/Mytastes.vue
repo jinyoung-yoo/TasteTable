@@ -9,6 +9,8 @@
     <div class=''>
       <ol class="my">
         <li class="my" v-for='log in logs' v-bind:key='log.id'>
+          Tastes Address :<input v-model="log.address"></input>
+
           <tastetable v-bind:score="log.scores" v-bind:name="log.text">
           </tastetable>
         </li>
@@ -40,14 +42,17 @@ export default {
       logs: [
         {
           'text': 'Travel',
+          'address': '5add42c2-87ba-11e8-9a94-a6cf71072f73',
           'scores': [1, -1, 1, 0, -1, 0, 1, 1, -1]
         },
         {
           'text': 'Food',
+          'address': '6667fe3e-87ba-11e8-9a94-a6cf71072f73',
           'scores': [0, 0, 0, 1, -1, 0, 1, 1, -1]
         },
         {
           'text': 'Dating',
+          'address': '6e434050-87ba-11e8-9a94-a6cf71072f73',
           'scores': [1, 1, 0, 0, -1, 0, 1, 1, -1]
         }
       ]
