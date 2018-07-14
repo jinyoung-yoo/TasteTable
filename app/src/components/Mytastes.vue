@@ -9,8 +9,7 @@
     <div class='col-xs-12 col-sm-8 col-sm-push-2'>
       <ol class="my">
         <li v-for='log in logs' v-bind:key='log.id'>
-          {{ log.text }}
-          <tastetable>
+          <tastetable v-bind:score="log.scores" v-bind:name="log.text">
           </tastetable>
         </li>
       </ol>      
@@ -36,15 +35,15 @@ export default {
       logs: [
         {
           'text': 'Travel',
-          'scores': [1, 0, 0, 0, -1, 0, 1, 1, -1]
+          'scores': [1, -1, 1, 0, -1, 0, 1, 1, -1]
         },
         {
           'text': 'Food',
-          'scores': [1, 0, 0, 0, -1, 0, 1, 1, -1]
+          'scores': [0, 0, 0, 1, -1, 0, 1, 1, -1]
         },
         {
           'text': 'Dating',
-          'scores': [1, 0, 0, 0, -1, 0, 1, 1, -1]
+          'scores': [1, 1, 0, 0, -1, 0, 1, 1, -1]
         }
       ]
     }

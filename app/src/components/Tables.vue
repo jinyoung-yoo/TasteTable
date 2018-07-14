@@ -3,7 +3,7 @@
         <h2>취향 테이블 : 데이트</h2>
         
         <ol>
-        <li v-for='cell in tables' 
+        <li v-for='cell in tables'   v-bind:key='cell.id'
         v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
         v-on:click='cell.taste = (cell.taste + 1) % 4'>
             {{ cell.text }}
@@ -244,7 +244,7 @@ li.hate{
 img.small {
     width: 310px;
 }
-li {
+ol.li {
  vertical-align: top;
     margin: 8px 0;
     display: inline-block;
