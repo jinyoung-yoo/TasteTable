@@ -17,13 +17,13 @@ body {
   font-family: Helvetica;
 }
 li.good{
-   background: red;
+   background: rgba(248, 114, 104, 0.425);
 }
 li.soso{
-   background: yellow;
+   background: rgba(239, 248, 104, 0.425);
 }
 li.hate{
-   background: blue;
+   background: rgba(104, 167, 248, 0.425);
 }
 li {
  vertical-align: top;
