@@ -1,9 +1,11 @@
 <template>
   <div class="hello">
-    ttt
-      {{ msg }}
-      <tastetable v-bind:score="scores" v-bind:name="tableId">
-          </tastetable>
+    당신의 취향을 선택해주세요 <br>
+    빨강 : 싫은것 <br>
+    노랑 : 보통 <br>
+    파랑 : 좋은것 <br>
+      <TastetableEdit v-bind:score="scores" v-bind:name="tableId" v-bind:mode="edit">
+          </TastetableEdit>
   </div>
 </template>
 
@@ -12,11 +14,12 @@ export default {
   name: 'CreateTaste1',
   props: ['tableId'],
   components: {
-    'tastetable': () => import('./tastetable')
+    'TastetableEdit': () => import('./TastetableEdit')
   },
   data () {
     return {
       scores: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      edit: true,
       msg: 'Welcome to Your Vue.js App' + this.tableId
     }
   }

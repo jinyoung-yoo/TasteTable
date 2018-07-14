@@ -3,9 +3,10 @@
         <ol class="table" v-for='table in tables' v-bind:key='table.id' v-if="table.tname_en == tname_en" >
         <h5>취향 테이블 : {{table.tname_kr}}</h5>  
         <li v-for='(taste, i) in table.tastes' v-bind:key='i'
-        v-bind:class='{ null : score[i] == 0, good : score[i] == 1,
-            soso : score[i] == 2,
-            hate : score[i] == 3}'>
+        v-bind:class='{ null : scores[i] == 0, good : scores[i] == 1,
+            soso : scores[i] == 2,
+            hate : scores[i] == 3}' 
+            v-on:click='scores[i] = (score[i] + 1) % 4'>
             {{ taste.name_kr }}
         </li>
         </ol>
@@ -17,10 +18,11 @@
 // v-if="table.tname_en == tname_en"
 export default {
   name: 'app',
-  props: ['score', 'name'],
+  props: ['score', 'name', 'mode'],
   data () {
     return {
       tname_en: this.name,
+      scores: this.score,
       tables: [
           {
         'tname_kr': '데이트',

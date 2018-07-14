@@ -4,7 +4,7 @@
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <li class="navbar-brand"><router-link to="/">Home</router-link></li>
-        <li class="navbar-brand"><router-link to="/create_taste">Create Taste</router-link></li>
+        <!-- <li class="navbar-brand"><router-link to="/create_taste">Create Taste</router-link></li> -->
         <li class="navbar-brand"><router-link to="/create_table">Create New Taste-Table</router-link></li>
         <li class="navbar-brand"><router-link to="/matching">Taste-Matching with Friend</router-link></li>
         <li class="navbar-brand"><router-link to="/my">My Tastes</router-link></li>

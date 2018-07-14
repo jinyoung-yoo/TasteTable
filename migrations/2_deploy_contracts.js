@@ -1,5 +1,5 @@
-var TutorialToken = artifacts.require("./TutorialToken.sol");
+var Template = artifacts.require("./Template.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(TutorialToken);
+    deployer.deploy(Template);
 };
