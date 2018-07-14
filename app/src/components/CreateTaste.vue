@@ -1,15 +1,23 @@
 <template>
   <div class="hello">
-    
+    ttt
+      {{ msg }}
+      <tastetable v-bind:score="scores" v-bind:name="tableId">
+          </tastetable>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'CreateTaste1',
+  props: ['tableId'],
+  components: {
+    'tastetable': () => import('./tastetable')
+  },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      scores: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      msg: 'Welcome to Your Vue.js App' + this.tableId
     }
   }
 }
