@@ -2,25 +2,25 @@
     <div class="container">
         <h2>Create TasteTable</h2>
         <ul>
-        <form>
-        <input type="radio" name="tastelist" value="date"checked>Date<br>
-        <input type="radio" name="tastelist" value="travel">Travel<br>
-        <input type="radio" name="tastelist" value="food">Food
-        </form>
+        <select v-model="selected">
+          <option disabled value="">Please select one</option>
+          <option name="tastelist" value="date">Date</option>
+          <option name="tastelist" value="travel">Travel</option>
+          <option name="tastelist" value="food">Food</option>
+        </select>
         </ul>
-        <div id="tables">
-      
-      
-    </div>
+    
+        <div class="mx-auto">
         <ol>
         <li v-for='cell in tables' 
         v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
         v-on:click='cell.taste = (cell.taste + 1) % 4'>
             {{ cell.text }}
         </li>
-         
         </ol>
+        </div>
     </div>
+
 </template>
 <style>
 body {

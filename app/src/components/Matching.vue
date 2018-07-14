@@ -4,82 +4,42 @@
     <div class="col-xs-12 col-sm-8 col-sm-push-2">
       <h1 class="text-center">Matching</h1>
       <hr/>
-      <br/>
-        <ul>
-        <form>
-        <input type="radio" name="tastelist" value="date"checked>Date<br>
-        <input type="radio" name="tastelist" value="travel">Travel<br>
-        <input type="radio" name="tastelist" value="food">Food
-        </form>
-        </ul>
+      
+        <select v-model="selected">
+          <option disabled value="">Please select one</option>
+          <option name="tastelist" value="date">Date</option>
+          <option name="tastelist" value="travel">Travel</option>
+          <option name="tastelist" value="food">Food</option>
+        </select>
     </div>
-    <div>
-        <ol>
+        
+        <div class="col-xs-6 col-md-4">
         <li v-for='cell in tables' 
         v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
-       >
+        id= 'mytable'>
             {{ cell.text }}
         </li>
-         
-        </ol>
-    </div>
-    <div id="tables">
-      <div id="mytable">
-      <ul>
-      <li id=1></li>
-      <li id=2></li>
-      <li id=3></li>
-      </ul>
-      <ul>
-      <li id=4></li>
-      <li id=5></li>
-      <li id=6></li>
-      </ul>
-      <ul>
-      <li id=7></li>
-      <li id=8></li>
-      <li id=9></li>
-      </ul>
-      </div>
-      <div id="targettable">
-      <ul>
-      <li id=1></li>
-      <li id=2></li>
-      <li id=3></li>
-      </ul>
-      <ul>
-      <li id=4></li>
-      <li id=5></li>
-      <li id=6></li>
-      </ul>
-      <ul>
-      <li id=7></li>
-      <li id=8></li>
-      <li id=9></li>
-      </ul>
-      </div>
-    </div>
+        <div>
+        <textarea cols="30" rows="1"></textarea>
+        </div>
+        </div>
+        <div class="col-xs-6 col-md-4">
+        <li v-for='cell in tables' 
+        v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
+        id='targettable'>
+            {{ cell.text }}
+        </li>
+        <textarea cols="30" rows="1"></textarea>
+        </div>
     
+    <div id="result">
+      
+      
+      <br>
+      <button>Matching</button>
+    </div>
   </div>
 
-  <div id="petsRow" class="row">
-    <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">My Wallet</h3>
-          <sub>{{account}}</sub>
-        </div>
-        <div class="panel-body">
-          <h4>Balance</h4>
-          <strong>Balance</strong>: <span id="TTBalance" v-html='balance'></span> TT<br/><br/>
-          <h4>Transfer</h4>
-          <input type="text" class="form-control" id="TTTransferAddress" v-model='toAddress' placeholder="Address" />
-          <input type="text" class="form-control" id="TTTransferAmount" v-model='toAmount' placeholder="Amount" />
-          <button class="btn btn-primary" id="transferButton" type="button" @click.prevent='makeTransfer()'>Transfer</button>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 </template>
 <style>
@@ -99,6 +59,9 @@ li {
     text-align: center;
     cursor: pointer;
     height: 90px;
+}
+result{
+  margin-top:px;
 }
 label{
   cursor: pointer;
@@ -128,8 +91,8 @@ import Web3 from 'web3'
 
 export default {
 
-  name: 'datetable',
-  date () {
+  name: 'datatable',
+  data () {
     return {
       toAddress: null,
       toAmount: 0,
@@ -139,59 +102,48 @@ export default {
       contracts: {},
       account: null,
       tables: [
-        { i: 1, text: '와인', taste: 0 },
-        { i: 2, text: '양주', taste: 0 },
-        { i: 3, text: '도심 산책', taste: 0 },
-        { i: 4, text: '야경', taste: 0 },
-        { i: 5, text: '해외 여행', taste: 0 },
-        { i: 6, text: '코엑스', taste: 0 },
-        { i: 7, text: '놀이 공원', taste: 0 },
-        { i: 8, text: '소주', taste: 0 },
-        { i: 9, text: '막걸리', taste: 0 }
-      ]
-    }
-  },
-  travel () {
-    return {
-      toAddress: null,
-      toAmount: 0,
-      web3: null,
-      web3Provider: null,
-      balance: 0,
-      contracts: {},
-      account: null,
-      tables: [
-        { i: 1, text: '와인', taste: 0 },
-        { i: 2, text: '양주', taste: 0 },
-        { i: 3, text: '도심 산책', taste: 0 },
-        { i: 4, text: '야경', taste: 0 },
-        { i: 5, text: '해외 여행', taste: 0 },
-        { i: 6, text: '코엑스', taste: 0 },
-        { i: 7, text: '놀이 공원', taste: 0 },
-        { i: 8, text: '소주', taste: 0 },
-        { i: 9, text: '막걸리', taste: 0 }
-      ]
-    }
-  },
-  food () {
-    return {
-      toAddress: null,
-      toAmount: 0,
-      web3: null,
-      web3Provider: null,
-      balance: 0,
-      contracts: {},
-      account: null,
-      tables: [
-        { i: 1, text: '와인', taste: 0 },
-        { i: 2, text: '양주', taste: 0 },
-        { i: 3, text: '도심 산책', taste: 0 },
-        { i: 4, text: '야경', taste: 0 },
-        { i: 5, text: '해외 여행', taste: 0 },
-        { i: 6, text: '코엑스', taste: 0 },
-        { i: 7, text: '놀이 공원', taste: 0 },
-        { i: 8, text: '소주', taste: 0 },
-        { i: 9, text: '막걸리', taste: 0 }
+        { i: 1, text: '', taste: 0 },
+        { i: 2, text: '', taste: 0 },
+        { i: 3, text: '', taste: 0 },
+        { i: 4, text: '', taste: 0 },
+        { i: 5, text: '', taste: 0 },
+        { i: 6, text: '', taste: 0 },
+        { i: 7, text: '', taste: 0 },
+        { i: 8, text: '', taste: 0 },
+        { i: 9, text: '', taste: 0 }
+      ],
+      datetable: [
+        { i: 1, text: '놀이공원', taste: 0 },
+        { i: 2, text: '카페', taste: 0 },
+        { i: 3, text: '도시산책', taste: 0 },
+        { i: 4, text: '찜질방', taste: 0 },
+        { i: 5, text: '극장', taste: 0 },
+        { i: 6, text: '바다', taste: 0 },
+        { i: 7, text: '술', taste: 0 },
+        { i: 8, text: '노래방', taste: 0 },
+        { i: 9, text: '운동', taste: 0 }
+      ],
+      foodtable: [
+        { i: 1, text: '짜장면', taste: 0 },
+        { i: 2, text: '초밥', taste: 0 },
+        { i: 3, text: '삼겹살', taste: 0 },
+        { i: 4, text: '커리', taste: 0 },
+        { i: 5, text: '스테이크', taste: 0 },
+        { i: 6, text: '냉면', taste: 0 },
+        { i: 7, text: '치킨', taste: 0 },
+        { i: 8, text: '라면', taste: 0 },
+        { i: 9, text: '떡볶이', taste: 0 }
+      ],
+      traveltable: [
+        { i: 1, text: '나홀로여행', taste: 0 },
+        { i: 2, text: '디지털디톡스여행', taste: 0 },
+        { i: 3, text: '트레킹여행', taste: 0 },
+        { i: 4, text: '홈스테이여행', taste: 0 },
+        { i: 5, text: '힐링여행', taste: 0 },
+        { i: 6, text: '수상스포츠여행', taste: 0 },
+        { i: 7, text: '자선여행', taste: 0 },
+        { i: 8, text: '음주여행', taste: 0 },
+        { i: 9, text: '애완동물과여행', taste: 0 }
       ]
     }
   },
