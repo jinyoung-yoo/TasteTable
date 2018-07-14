@@ -1,13 +1,13 @@
 <template>
     <div>
         <ol class="table" v-for='table in tables' v-bind:key='table.id' v-if="table.tname_en == tname_en" >
-        <h5>취향 테이블 : {{table.tname_kr}}</h5>  
+        <h5>Table Type : {{table.tname_en}}</h5>  
         <li v-for='(taste, i) in table.tastes' v-bind:key='i'
         v-bind:class='{ null : scores[i] == 0, good : scores[i] == 1,
             soso : scores[i] == 2,
             hate : scores[i] == 3}' 
             v-on:click='scores[i] = (score[i] + 1) % 4'>
-            {{ taste.name_kr }}
+            {{ taste.name_en }}
         </li>
         </ol>
     </div>
@@ -205,6 +205,8 @@ ol.table li {
     text-align: center;
     /* cursor: pointer; */
     height: 60px;
+
+     word-wrap: break-word;
 }
 ol.table {
     width: 240px;
