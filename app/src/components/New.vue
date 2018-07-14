@@ -12,7 +12,7 @@
     
         <div>
         <ol>
-        <li v-for='cell in tables' 
+        <li v-for='cell in tables' v-bind:key='cell.id'
         v-bind:class='{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}' 
         v-on:click='cell.taste = (cell.taste + 1) % 4'>
             {{ cell.text }}
@@ -24,7 +24,6 @@
 </template>
 <style>
 body {
-  background: #20262E;
   padding: 20px;
   font-family: Helvetica;
 }

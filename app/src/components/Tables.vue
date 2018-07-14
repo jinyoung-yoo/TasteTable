@@ -228,7 +228,6 @@ require('bootstrap-css-only')
 <style lang='css' scoped>
 
 body {
-  background: #20262E;
   padding: 20px;
   font-family: Helvetica;
 }
