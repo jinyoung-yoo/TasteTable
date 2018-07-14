@@ -1,35 +1,45 @@
 <template>
  <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-push-2">
+    <div class="col-xs-12">
       <h1 class="text-center">Matching</h1>
       <hr/>
     </div>
         
-        <div class="col-xs-6 col-md-4">
+        <div class="col-xs-4 col-md-4 center">
+        
+          <div class="col3">
+            User1's Tastes :<input v-model="user1"></input>
           <ol class="matching"><li v-bind:key='cell.id' v-for="cell in tables" 
           v-bind:class="{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}" 
           id= "mytable" >
               {{ cell.text }}
           </li></ol>
-        <div>
-        <textarea cols="30" rows="1"></textarea>
-        </div>
-        </div>
-        <div class="col-xs-6 col-md-4">
+          </div>
+          <div class="col3">
+          VS.
+<br><br>
+      <button v-on:click="matching()" >Matching</button><br><br>
+      score: <input v-model="score">
+          </div>
+          <div class="col3">
+          
+          User2's Tastes :<input v-model="user2"></input>
           <ol class="matching"><li v-bind:key='cell.id' v-for="cell in tables" 
           v-bind:class="{ null : cell.taste == 0, good : cell.taste == 1, soso : cell.taste == 2,  hate : cell.taste == 3}" 
           id="targettable">
               {{ cell.text }}
           </li></ol>
-        <textarea cols="30" rows="1"></textarea>
+
+          </div>
         </div>
+        
     
+    </div>
     <div id="result">
       
       
       <br>
-      <button>Matching</button>
     </div>
   </div>
 
@@ -57,6 +67,9 @@ result{
 }
 label{
   cursor: pointer;
+}
+.col3 {
+    display: table-cell;
 }
 ol {
     width: 350px;
@@ -86,6 +99,7 @@ export default {
   name: 'datatable',
   data () {
     return {
+      score: '',
       toAddress: null,
       toAmount: 0,
       web3: null,
@@ -143,6 +157,9 @@ export default {
     this.getProvider()
   },
   methods: {
+    matching () {
+      this.score = '85%'
+    },
     getProvider () {
       // Checking if Web3 has been injected by the browser (Mist/MetaMask)
       if (typeof web3 !== 'undefined') {

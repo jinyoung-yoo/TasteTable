@@ -106,6 +106,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 // import Vue from 'vue'
 import Web3 from 'web3'
 import router from '../router'
