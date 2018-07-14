@@ -15,6 +15,7 @@
         </ul>
       </div>
     </div>
+<<<<<<< HEAD
     <div class='col-xs-12 col-sm-8 col-sm-push-2>
       <ol>
         <li v-for='cell in tables' 
@@ -25,6 +26,8 @@
       </ol>
         
     </div>
+=======
+>>>>>>> dace608bfc9438513c5cff4dca49c7a8c6e0cfad
   </div>
 
 </template>
