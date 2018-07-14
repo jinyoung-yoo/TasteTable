@@ -4,7 +4,8 @@ import Home from '@/components/Home'
 // import Tables from '@/components/Tables'
 import Matching from '@/components/Matching'
 import New from '@/components/New'
-import Me from '@/components/Me'
+import Mytastes from '@/components/Mytastes'
+import CreateTaste from '@/components/CreateTaste'
 
 Vue.use(Router)
 
@@ -16,9 +17,14 @@ export default new Router({
       component: Home
     },
     {
-      path: '/me',
-      name: 'Me',
-      component: Me
+      path: '/my',
+      name: 'Mytastes',
+      component: Mytastes
+    },
+    {
+      path: '/create_taste',
+      name: 'CreateTaste',
+      component: CreateTaste
     },
     {
       path: '/matching',
@@ -26,7 +32,7 @@ export default new Router({
       component: Matching
     },
     {
-      path: '/new',
+      path: '/create_table',
       name: 'New',
       component: New
     }

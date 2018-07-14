@@ -1,8 +1,9 @@
 <template>
   <div id='app'>
     <li><router-link to="/">Home</router-link></li>
-    <li><router-link to="/me">Create My Tates</router-link></li>
-    <li><router-link to="/new">Create New Taste-Table</router-link></li>
+    <li><router-link to="/my"> My Tates</router-link></li>
+    <li><router-link to="/create_taste">Create Taste</router-link></li>
+    <li><router-link to="/create_table">Create New Taste-Table</router-link></li>
     <li><router-link to="/matching">Taste-Matching with Friend</router-link></li>
 
     <router-view></router-view>
