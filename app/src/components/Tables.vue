@@ -10,13 +10,12 @@
         </ol>
             <img :src="img.encodedImage">
 
-        <img src='data:image/jpeg;base64,{{bytesToBase64(imageBytes)}}' />
+        <img v-bind:src="base64ImageData" />
     </div>
 </template>
 <script>
 import Web3 from 'web3'
-
-import { NoiaClient } from '@noia-network/sdk'
+import { NoiaClient, NoiaClientContainer } from '@noia-network/sdk'
 import { bytesToBase64 } from '../utils/base64'
 
 export default {
@@ -92,16 +91,27 @@ export default {
       ]
     }
   },
+  composed: {
+    base64ImageData: function () {
+      return 'data:image/jpeg;base64,' + this.imageBytes
+    }
+  },
+
+  computed: {
+    // 계산된 getter
+    reversedMessage: function () {
+      // `this` 는 vm 인스턴스를 가리킵니다.
+      return this.message.split('').reverse().join('')
+    }
+  },
   mounted () {
     this.getProvider()
 
-
-    const noiaClient = new NoiaClient(() => new Worker());
-    NoiaClientContainer.initialize(noiaClient);
+    const noiaClient = new NoiaClient(() => new Worker())
+    NoiaClientContainer.initialize(noiaClient)
     // console.log(await asyncFun())
 
     // asyncFunc().then(v = console.log(v))
-
 
     //     this.imageBytes = await noiaClient.download({
     //       src: "ipfs:QmbjpRxxL8TRNayHWysWTFSVht1DZxezSNcK48TUp94UmA"
@@ -109,11 +119,11 @@ export default {
 
     var self = this
     noiaClient.download({
-      src: "ipfs:QmbjpRxxL8TRNayHWysWTFSVht1DZxezSNcK48TUp94UmA"
-    }).then(self.imageBytes = v)
+      src: 'ipfs:QmbjpRxxL8TRNayHWysWTFSVht1DZxezSNcK48TUp94UmA'
+    }).then(self.imageBytes)
 
-    console.info(`Image downloaded (${imageBytes.length} bytes)`)
-
+    // console.info(`Image downloaded (${imageBytes.length} bytes)`)
+    console.info(bytesToBase64(this.imageBytes))
   },
   methods: {
     getProvider () {
