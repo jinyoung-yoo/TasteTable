@@ -92,4 +92,8 @@ Connecting to server-jaqnlyssuq.now.sh (server-jaqnlyssuq.now.sh)|104.18.127.144
 Connecting to server-jaqnlyssuq.now.sh (server-jaqnlyssuq.now.sh)|104.18.124.144|:3000... failed: Operation timed out.
 Connecting to server-jaqnlyssuq.now.sh (server-jaqnlyssuq.now.sh)|104.18.125.144|:3000... failed: Operation timed out.
 Connecting to server-jaqnlyssuq.now.sh (server-jaqnlyssuq.now.sh)|104.18.126.144|:3000... failed: Operation timed out.
-Connecting to server-jaqnlyssuq.now.sh (server-jaqnlyssuq.now.sh)|104.18.123.144|:3000... 
+Connecting to server-jaqnlyssuq.now.sh (server-jaqnlyssuq.now.sh)|104.18.123.144|:3000... failed: Operation timed out.
+Retrying.
+
+--2018-07-15 10:19:32--  (try:13)  https://server-jaqnlyssuq.now.sh:3000/user/new/?user_uuid=user_uuid111
+Connecting to server-jaqnlyssuq.now.sh (server-jaqnlyssuq.now.sh)|104.18.127.144|:3000... 
