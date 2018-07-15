@@ -22,6 +22,13 @@ npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
+# --------- server
+
+
+# move to app and install dependencies
+cd server
+npm install
+node server.js
 
 # build for production with minification
 npm run build

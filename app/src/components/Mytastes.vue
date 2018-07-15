@@ -31,6 +31,8 @@ ol.my {
 // 좋아, 소소, 선택안함, 싫어
 // 2, 1, 0, -2
 
+/* eslint-disable */
+
 export default {
 
   name: 'datatable',

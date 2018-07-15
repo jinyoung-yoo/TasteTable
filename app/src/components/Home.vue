@@ -64,7 +64,13 @@
         </div>
       </div>
     </section>
-
+    <section class="features-icons bg-light text-center">
+      <div class="container">
+          <div class="row">
+              <h3>Select Taste-Table~</h3>
+          </div>
+      </div>
+    </section>
 <!-- Image Showcases -->
     <section class="showcase">
       <div class="container-fluid p-0">
@@ -193,9 +199,15 @@ export default {
           this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[0].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')});
           console.log("yunjin");
           console.log(this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[0].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')}));
-          this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[1].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')});
-          this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[2]}).then(function(value) {return value.toNumber();});
-          this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[3]}).then(function(value) {return value.toNumber();});
+          this.contracts.Template.deployed().then(function(instance){ 
+            return instance.getTemplate.call(i)}).then(function(v){return v[1].toString()}).then(function(value) {
+              return web3.toAscii(value).replace(/\u0000/g, '')});
+          this.contracts.Template.deployed().then(function(instance){ 
+            return instance.getTemplate.call(i)}).then(function(v){return v[2]}).then(function(value) {
+              return value.toNumber();});
+          this.contracts.Template.deployed().then(function(instance){ 
+            return instance.getTemplate.call(i)}).then(function(v){return v[3]}).then(function(value) {
+              return value.toNumber();});
         }
 
         //Template.deployed().then(function(instance){ return instance.getTemplate.call(0)}).then(function(v){return v[0].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')});
@@ -241,7 +253,7 @@ export default {
       contracts: {},
       account: null,
       tables: [
-        /*{
+        {
           'text': 'Travel',
           'scores': [0, 0, 0, 0, 0, 0, 0, 0, 0]
         },
@@ -252,7 +264,7 @@ export default {
         {
           'text': 'Dating',
           'scores': [0, 0, 0, 0, 0, 0, 0, 0, 0]
-        }*/
+        }
       ]
     }
   }
