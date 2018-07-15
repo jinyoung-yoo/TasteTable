@@ -301,9 +301,9 @@ export default {
       this.getContract()
     },
     getContract () {
-      var TemplateArtifact = require('../../../build/contracts/Template.json')
-      this.contracts.Template = this.$TruffleContract(TemplateArtifact)
-      this.contracts.Template.setProvider(this.web3Provider)
+    //   var TemplateArtifact = require('../../../build/contracts/Template.json')
+    //   this.contracts.Template = this.$TruffleContract(TemplateArtifact)
+    //   this.contracts.Template.setProvider(this.web3Provider)
       this.networkCheck()
       // this.getTables()
       this.saveB()
@@ -313,8 +313,10 @@ export default {
         if (error) {
           console.log(error)
           return
-        }
+        }  
         this.account = accounts[0]
+        console.log(JSON.stringify(this.tables))
+        console.log(JSON.stringify(this.tables))
         this.$http.get('http://localhost:3000/user/modify/?user_uuid=' + this.account + '&data=' + JSON.stringify(this.tables) ).then(response => {
           // success callback
                   console.log(' success callback')

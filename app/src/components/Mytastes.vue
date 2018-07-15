@@ -33,11 +33,33 @@ ol.my {
 
 /* eslint-disable */
 
+import Vue from 'vue'
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
 export default {
 
   name: 'datatable',
   components: {
     'tastetable': () => import('./tastetable')
+  },
+  mounted () {
+    this.ddd()
+  },
+  methods: {
+
+    ddd () {
+      this.account = '0x8550d15c493e97afce6f34dacebc3a1f2e309e21'
+      // console.log(JSON.stringify(this.tables))
+      this.$http.get('http://localhost:3000/user/all/?user_uuid=' + this.account).then(response => {
+        // success callback
+        console.log(response.data)
+        // alert('Saved at bluzelle swarmDB')
+
+      }, response => {
+        // error callback
+        console.log(' error callback')
+      });
+    }
   },
   data () {
     return {

@@ -54,9 +54,9 @@ export default {
       this.getContract()
     },
     getContract () {
-      var TemplateArtifact = require('../../../build/contracts/Template.json')
-      this.contracts.Template = this.$TruffleContract(TemplateArtifact)
-      this.contracts.Template.setProvider(this.web3Provider)
+    //   var TemplateArtifact = require('../../../build/contracts/Template.json')
+    //   this.contracts.Template = this.$TruffleContract(TemplateArtifact)
+    //   this.contracts.Template.setProvider(this.web3Provider)
       this.networkCheck()
       // this.getTables()
       this.saveB()
