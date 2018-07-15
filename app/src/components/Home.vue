@@ -20,11 +20,11 @@
                   <input type="notice" class="form-control form-control-lg" v-model="notice">
                 </div>
               </div>
-              
+
             </form>
-            
+
           </div>
-          
+
         </div>
       </div>
     </header>
@@ -196,18 +196,12 @@ export default {
             })
 
         for(var i=0;i<3;i++){
-          this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[0].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')});
-          console.log("yunjin");
-          console.log(this.contracts.Template.deployed().then(function(instance){ return instance.getTemplate.call(i)}).then(function(v){return v[0].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')}));
-          this.contracts.Template.deployed().then(function(instance){ 
+           var name_en = this.contracts.Template.deployed().then(function(instance){
             return instance.getTemplate.call(i)}).then(function(v){return v[1].toString()}).then(function(value) {
               return web3.toAscii(value).replace(/\u0000/g, '')});
-          this.contracts.Template.deployed().then(function(instance){ 
-            return instance.getTemplate.call(i)}).then(function(v){return v[2]}).then(function(value) {
-              return value.toNumber();});
-          this.contracts.Template.deployed().then(function(instance){ 
-            return instance.getTemplate.call(i)}).then(function(v){return v[3]}).then(function(value) {
-              return value.toNumber();});
+          var name_en_json = "{\"text\":\""+name_en+"\"}";
+          tables.push(name_en_json);
+          console.log(tables);
         }
 
         //Template.deployed().then(function(instance){ return instance.getTemplate.call(0)}).then(function(v){return v[0].toString()}).then(function(value) {return web3.toAscii(value).replace(/\u0000/g, '')});
