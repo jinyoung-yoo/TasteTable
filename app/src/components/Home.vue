@@ -117,6 +117,22 @@
 /* eslint-disable */
 import Web3 from 'web3'
 import router from '../router'
+
+const tables = [
+  {
+    'text': 'Travel',
+    'scores': [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  },
+  {
+    'text': 'Food',
+    'scores': [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  },
+  {
+    'text': 'Dating',
+    'scores': [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  }
+];
+
 export default {
   name: 'home',
   components: {
@@ -199,7 +215,7 @@ export default {
            var name_en = this.contracts.Template.deployed().then(function(instance){
             return instance.getTemplate.call(i)}).then(function(v){return v[1].toString()}).then(function(value) {
               return web3.toAscii(value).replace(/\u0000/g, '')});
-          var name_en_json = "{\"text\":\""+name_en+"\"}";
+          var name_en_json = JSON.parse("{\"text\":\""+name_en+"\"}");
           tables.push(name_en_json);
           console.log(tables);
         }
@@ -246,20 +262,7 @@ export default {
       balance: 0,
       contracts: {},
       account: null,
-      tables: [
-        {
-          'text': 'Travel',
-          'scores': [0, 0, 0, 0, 0, 0, 0, 0, 0]
-        },
-        {
-          'text': 'Food',
-          'scores': [0, 0, 0, 0, 0, 0, 0, 0, 0]
-        },
-        {
-          'text': 'Dating',
-          'scores': [0, 0, 0, 0, 0, 0, 0, 0, 0]
-        }
-      ]
+      tables: tables
     }
   }
 }
