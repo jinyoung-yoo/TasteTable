@@ -1,3 +1,7 @@
+### 프로젝트 내용
+- Portal Network 해커톤에서 대상 수상
+- vue.js 및 bulzelle, ipfs 등 처음 사용해본 기술이 많아 흥미로웠음.
+
 # vue-truffle
 
 > Vue.js version of Truffle & Zeppelin's Tutorial [Robust Smart Contracts with Openzeppelin](http://truffleframework.com/tutorials/robust-smart-contracts-with-openzeppelin)
